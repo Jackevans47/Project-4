@@ -32,6 +32,8 @@
 ![Log in desktop](https://github.com/Jackevans47/Project-4/assets/148341732/1bc92555-e477-43da-825e-bd973da3bd32)
 <img width="1220" alt="Sign up page desktop" src="https://github.com/Jackevans47/Project-4/assets/148341732/952b36f8-80ce-4b1d-931b-02e71dad442f">
 
+---
+
 - [Tablet Wireframes]
 - ![About tablet](https://github.com/Jackevans47/Project-4/assets/148341732/4f7ac352-9246-42db-94f7-75372526b993)
 ![Delete profile tablet](https://github.com/Jackevans47/Project-4/assets/148341732/edbf4256-c67f-4368-9fb3-3ab37437c90b)
@@ -39,6 +41,8 @@
 ![Home tablet](https://github.com/Jackevans47/Project-4/assets/148341732/5b4a5d78-5156-4894-a25f-ab8fad71689c)
 ![Log in tablet](https://github.com/Jackevans47/Project-4/assets/148341732/93ac6195-ab0f-4695-a793-eb6f6a283ce3)
 ![Sign up tablet](https://github.com/Jackevans47/Project-4/assets/148341732/57103b61-a484-48dc-9ce0-abd2cb0e8787)
+
+---
 
 - [Mobile Wireframes]
 - ![About mobile](https://github.com/Jackevans47/Project-4/assets/148341732/c7105401-cfd3-40ad-a6e3-0feec0b771a7)
