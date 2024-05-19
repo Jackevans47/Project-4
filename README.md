@@ -52,3 +52,12 @@
 ![Home mobile](https://github.com/Jackevans47/Project-4/assets/148341732/b4e2174a-bcaf-4d68-877e-ce74766ec890)
 
 ---
+
+
+### Entity-Relationship Diagram
+
+* The ERD was created using [Draw.io](https://www.lucidchart.com/).
+
+- [Database Scheme]()
+![ERD](https://github.com/Jackevans47/Project-4/assets/148341732/b486a604-718a-46d4-accd-9d8badce261e)
+
