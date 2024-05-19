@@ -61,3 +61,17 @@
 - [Database Scheme]()
 ![ERD](https://github.com/Jackevans47/Project-4/assets/148341732/b486a604-718a-46d4-accd-9d8badce261e)
 
+### Data Modeling
+
+1. **User**
+
+
+
+| Name          | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| UserName      | username      | CharField     |  max_length=50, blank=False, null=True, unique=True    |
+| Email         | email         | EmailField    | max_length=50, unique=True, blank=False, null=False    |
+| First Name    | first_name    | CharField     | max_length=30, blank=False, null=False    |
+| Last Name     | last_name     | CharField     | max_length=30, blank=False, null=False    |
+| Phone Number  | email         | CharField     | max_length=30, blank=False, null=False    |
+
