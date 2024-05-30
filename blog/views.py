@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from blog.models import Post
+from .forms import FormPost
 
 
 # post blog post on main page
@@ -18,5 +19,6 @@ class Article(DetailView):
 # create posts
 class AddPost(CreateView):
     model = Post
+    form_class = FormPost
     template_name = "add_post.html"
-    fields = "__all__"
+    # fields = ("title", "body")

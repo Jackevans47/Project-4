@@ -2,10 +2,12 @@
 
 <h1>Add post</h1>
 <br /><br />
+<div class="form-group">
 <!-- Create form-->
-<form method="POST">
-  {% csrf_token %} {{ form.as_p }}
-  <button class="btn btn-info">Post</button>
+    <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
+    <button class="btn btn-info">Post</button>
+</div>
 
   {% endblock %}
 </form>
