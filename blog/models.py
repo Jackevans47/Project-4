@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 # Create blog posts
@@ -13,6 +14,10 @@ class Post(models.Model):
     def __str__(self):
         """Display title and user of blog post on admin page"""
         return self.title + " | " + str(self.author)
+
+    def get_absolute_url(self):
+        """Directs url to add post"""
+        return reverse("article-details", args=(str(self.id)))
 
 
 # Comments on blog posts
