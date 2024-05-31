@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from datetime import datetime, date
 
 
 # Create blog posts
@@ -10,6 +11,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+    post_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
         """Display title and user of blog post on admin page"""
