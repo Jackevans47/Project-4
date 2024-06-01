@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
+{% if user.is_authenticated %}
 <h1>Delete post</h1>
 <br /><br />
 <h3>Delete: {{ post.title }}</h3>
@@ -12,6 +13,11 @@
     <strong>Are you sure?</strong><br/><br/>
     <button class="btn btn-info">Delete Post!</button>
 </div>
+
+{% else %}
+Please log in
+<a href="{% url 'login' %}" class="btn btn-primary">Back</a>
+{% endif %}
 
   {% endblock %}
 </form>
