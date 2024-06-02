@@ -18,6 +18,15 @@ class Home(ListView):
     ordering = ["-timestamp"]
 
 
+def CategoryView(request, cats):
+    category_post = Post.objects.filter(category=cats)
+    return render(
+        request,
+        "categories.html",
+        {"cats": cats.title(), "category_post": category_post},
+    )
+
+
 # post one blog post on page
 class Article(DetailView):
     model = Post
@@ -32,6 +41,7 @@ class AddPost(CreateView):
     # fields = ("title", "body")
 
 
+# add category
 class AddCategory(CreateView):
     model = Category
     # form_class = FormPost
