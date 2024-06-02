@@ -6,7 +6,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
-from blog.models import Post
+from blog.models import Post, Category
 from .forms import FormPost, EditForm
 from django.urls import reverse_lazy
 
@@ -30,6 +30,13 @@ class AddPost(CreateView):
     form_class = FormPost
     template_name = "add_post.html"
     # fields = ("title", "body")
+
+
+class AddCategory(CreateView):
+    model = Category
+    # form_class = FormPost
+    template_name = "add_category.html"
+    fields = "__all__"
 
 
 # edit posts

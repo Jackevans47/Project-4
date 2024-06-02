@@ -4,6 +4,19 @@ from django.urls import reverse
 from datetime import datetime, date
 
 
+# catagories
+class Category(models.Model):
+    name = models.CharField(max_length=255, default="uncategorised")
+
+    def __str__(self):
+        """Display name"""
+        return self.name
+
+    def get_absolute_url(self):
+        """Directs url to add home"""
+        return reverse("home")
+
+
 # Create blog posts
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -12,9 +25,10 @@ class Post(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     post_date = models.DateField(auto_now_add=True)
+    category = models.CharField(max_length=255, default="uncategorised")
 
     def __str__(self):
-        """Display title and user of blog post on admin page"""
+        """Display title and user of blog post on page"""
         return self.title + " | " + str(self.author)
 
     def get_absolute_url(self):
