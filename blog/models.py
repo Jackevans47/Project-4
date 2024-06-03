@@ -33,7 +33,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """Directs url to add post"""
-        return reverse("article-details", args=(str(self.id)))
+        return reverse("article-details", args=[self.id])
 
 
 # Comments on blog posts

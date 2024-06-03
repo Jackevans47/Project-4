@@ -19,11 +19,11 @@ class Home(ListView):
 
 
 def CategoryView(request, cats):
-    category_post = Post.objects.filter(category=cats)
+    category_posts = Post.objects.filter(category=cats)
     return render(
         request,
         "categories.html",
-        {"cats": cats.title(), "category_post": category_post},
+        {"cats": cats.title(), "category_posts": category_posts},
     )
 
 
