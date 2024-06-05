@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %} 
 <h1>Edit post</h1>
 <br /><br />
 <div class="form-group">
@@ -9,6 +10,10 @@
     {% csrf_token %} {{ form.as_p }}
     <button class="btn btn-info">Update</button>
 </div>
+{% else %}
+Please log in
+<a href="{% url 'login' %}" class="btn btn-primary">Back</a>
+{% endif %}
 {% else %}
 Please log in
 <a href="{% url 'login' %}" class="btn btn-primary">Back</a>

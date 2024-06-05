@@ -2,12 +2,12 @@
 <h1>{{ post.title }}</h1>
 <small
   >By: {{ post.author.first_name }} {{ post.author.last_name}}<br />
-  {{ post.timestamp }} {% if user.is_authenticated %}
-
+  {{ post.timestamp }} {% if user.is_authenticated %}<br />
+  {% if user.id == post.author.id %}
   <a href="{% url 'edit_post' post.pk %}">(Edit)</a>
   <a href="{% url 'delete_post' post.pk %}">(Delete)</a> </small
 ><br />
-{% endif %} {{ post.body }}
+{% endif %} {% endif %} {{ post.body }}
 <br /><br />
 <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 {% endblock %}
