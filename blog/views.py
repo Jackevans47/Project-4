@@ -24,6 +24,17 @@ class Home(ListView):
         return context
 
 
+class AddPostView(CreateView):
+
+    model = Post
+    form_class = FormPost
+    template_name = "add_post.html"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
 def CategoryListView(request):
     cat_menu_list = Category.objects.all()
     return render(
