@@ -7,7 +7,7 @@
   <a href="{% url 'edit_post' post.pk %}">(Edit)</a>
   <a href="{% url 'delete_post' post.pk %}">(Delete)</a> </small
 ><br />
-{% endif %} {% endif %} {{ post.body }}
+{% endif %} {% endif %} {{ post.body|safe }}
 <br /><br />
 <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
 {% endblock %}

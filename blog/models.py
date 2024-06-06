@@ -26,6 +26,9 @@ class Post(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     post_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=255, default="uncategorised")
+    snippet = models.CharField(
+        max_length=255,
+    )
 
     def __str__(self):
         """Display title and user of blog post on page"""
