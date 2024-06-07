@@ -77,15 +77,21 @@ WSGI_APPLICATION = "library.wsgi.application"
 if "DEVELOPMENT" in os.environ:
 
     DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-else:
-    print("Production environment")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        "default": dj_database_url.config(
+            # Replace this value with your local database's connection string.
+            default="postgresql://postgres:postgres@localhost:5432/Project-4",
+            conn_max_age=600,
+        )
+        #         "default": {
+        #             "ENGINE": "django.db.backends.sqlite3",
+        #             "NAME": BASE_DIR / "db.sqlite3",
+        #         }
+        #     }
+        # else:
+        #     print("Production environment")
+        #     DATABASES = {
+        #         "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+        #
     }
 
 
