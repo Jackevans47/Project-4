@@ -42,12 +42,13 @@ def CategoryListView(request):
     )
 
 
-def CategoryView(request, cats):
-    category_posts = Post.objects.filter(category=cats)
+def CategoryView(request, pk):
+    category_posts = Post.objects.filter(category=pk)
+    category = Category.objects.get(pk=pk)
     return render(
         request,
         "categories.html",
-        {"cats": cats.title(), "category_posts": category_posts},
+        {"cats": category.name, "category_posts": category_posts},
     )
 
 
