@@ -25,7 +25,7 @@ class Post(models.Model):
     body = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
     post_date = models.DateField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.CharField(max_length=255, default="uncategorised")
     snippet = models.CharField(
         max_length=255,
     )

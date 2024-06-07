@@ -4,7 +4,6 @@
 
 {% for item in cat_menu_list %}
 <h4>
-  <p>hi</p>
-  <a class="dropdown-item" href="{% url 'category' item.pk %}">{{ item }}</a>
+  <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a>
 </h4>
 {% endfor %} {% endblock %}
