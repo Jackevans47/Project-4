@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import (
     Home,
     Article,
@@ -19,4 +19,5 @@ urlpatterns = [
     path("article/<int:pk>/delete", DeletePost.as_view(), name="delete_post"),
     path("category/<int:pk>/", CategoryView, name="category"),
     path("category-list/", CategoryListView, name="category-list"),
+    path("<int:uid>/", include("members.urls")),
 ]
