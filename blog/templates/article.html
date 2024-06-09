@@ -19,8 +19,12 @@
       {{ post.author.first_name }} {{ post.author.last_name}}
     </h5>
     <p class="card-text">{{ post.author.profile.bio }}</p>
-    <!-- <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <a
+      href="{% url 'show_profile_page' post.author.profile.id %}"
+      class="card-link"
+      >Profile Page</a
+    >
+    <!-- <a href="#" class="card-link">Another link</a>
     <a href="#" class="card-link">Another link</a>
     <a href="#" class="card-link">Another link</a> -->
   </div>
