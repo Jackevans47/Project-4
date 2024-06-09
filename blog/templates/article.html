@@ -10,4 +10,19 @@
 {% endif %} {% endif %} {{ post.body|safe }}
 <br /><br />
 <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+
+<br /><br />
+
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ post.author.first_name }} {{ post.author.last_name}}
+    </h5>
+    <p class="card-text">{{ post.author.profile.bio }}</p>
+    <!-- <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+    <a href="#" class="card-link">Another link</a>
+    <a href="#" class="card-link">Another link</a> -->
+  </div>
+</div>
 {% endblock %}
