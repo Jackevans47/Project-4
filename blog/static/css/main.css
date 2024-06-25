@@ -10,3 +10,9 @@ h1 {
   padding: 20px;
   margin-top: 10px;
 }
+
+.mb-3 {
+  position: absolute;
+  bottom: 0;
+  width: 60%;
+}
