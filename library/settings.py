@@ -83,8 +83,10 @@ if "DEVELOPMENT" in os.environ:
     }
 else:
     print("Production environment")
-    DATABASE_URL = "postgresql://project-4_owner:95hOgZyKWwYI@ep-aged-breeze-a21juwel.eu-central-1.aws.neon.tech/project-4?sslmode=require"
-    # "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    DATABASE_URL = {
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
+    }
+    # "postgresql://project-4_owner:95hOgZyKWwYI@ep-aged-breeze-a21juwel.eu-central-1.aws.neon.tech/project-4?sslmode=require"
 
 
 # Password validation
