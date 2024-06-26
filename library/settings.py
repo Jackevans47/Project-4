@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import dj_database_url
 from os import getenv
+import dotenv
 from dotenv import load_dotenv
 
 if os.path.exists("env.py"):
