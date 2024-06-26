@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 import dj_database_url
+from os import getenv
+from dotenv import load_dotenv
 
 if os.path.exists("env.py"):
     import env
@@ -82,9 +84,20 @@ if "DEVELOPMENT" in os.environ:
         }
     }
 else:
-    print("Production environment")
-    DATABASE_URL = "postgresql://project-4_owner:95hOgZyKWwYI@ep-aged-breeze-a21juwel.eu-central-1.aws.neon.tech/project-4?sslmode=require"
-
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": getenv("PGDATABASE"),
+            "USER": getenv("PGUSER"),
+            "PASSWORD": getenv("PGPASSWORD"),
+            "HOST": getenv("PGHOST"),
+            "PORT": getenv("PGPORT", 5432),
+            "OPTIONS": {
+                "sslmode": "require",
+            },
+        }
+    }
+    #
     # "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 # Password validation
