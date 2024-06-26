@@ -1,12 +1,13 @@
 import os
 from pathlib import Path
 import dj_database_url
-from os import getenv
-import dotenv
-from dotenv import load_dotenv
+
+# from os import getenv
+# from dotenv import load_dotenv
 
 if os.path.exists("env.py"):
     import env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -84,22 +85,22 @@ if "DEVELOPMENT" in os.environ:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": getenv("PGDATABASE"),
-            "USER": getenv("PGUSER"),
-            "PASSWORD": getenv("PGPASSWORD"),
-            "HOST": getenv("PGHOST"),
-            "PORT": getenv("PGPORT", 5432),
-            "OPTIONS": {
-                "sslmode": "require",
-            },
-        }
-    }
-    #
-    # "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# else:
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": getenv("PGDATABASE"),
+#         "USER": getenv("PGUSER"),
+#         "PASSWORD": getenv("PGPASSWORD"),
+#         "HOST": getenv("PGHOST"),
+#         "PORT": getenv("PGPORT", 5432),
+#         "OPTIONS": {
+#             "sslmode": "require",
+#         },
+#     }
+# }
+#
+# "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
