@@ -22,12 +22,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "https://project-4-sue1.onrender.com",
-]
+ALLOWED_HOSTS = ["127.0.0.1"]
+# "localhost",
+# "127.0.0.1",
+# "https://project-4-sue1.onrender.com",
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -85,20 +87,9 @@ if "DEVELOPMENT" in os.environ:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-# else:
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": getenv("PGDATABASE"),
-#         "USER": getenv("PGUSER"),
-#         "PASSWORD": getenv("PGPASSWORD"),
-#         "HOST": getenv("PGHOST"),
-#         "PORT": getenv("PGPORT", 5432),
-#         "OPTIONS": {
-#             "sslmode": "require",
-#         },
-#     }
-# }
+else:
+    print("Production environment")
+    DATABASE_URL = "postgresql://project-4_owner:95hOgZyKWwYI@ep-aged-breeze-a21juwel.eu-central-1.aws.neon.tech/project-4?sslmode=require"
 #
 # "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
