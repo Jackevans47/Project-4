@@ -79,28 +79,28 @@ WSGI_APPLICATION = "library.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-if "DATABASE_URL" in os.environ:
-    print("database = PostgreSQL via Render")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
-else:
-    print("database = db.sqlite3")
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
-        }
-    }
-
-# if "DEVELOPMENT" in os.environ:
-
+# if "DATABASE_URL" in os.environ:
+#     print("database = PostgreSQL via Render")
+#     DATABASES = {
+#         "default": dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#     }
+# else:
+#     print("database = db.sqlite3")
 #     DATABASES = {
 #         "default": {
 #             "ENGINE": "django.db.backends.sqlite3",
 #             "NAME": BASE_DIR / "db.sqlite3",
 #         }
 #     }
+
+# if "DEVELOPMENT" in os.environ:
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
 # else:
 #     print("Production environment")
 #     DATABASE_URL = "postgresql://project-4_owner:95hOgZyKWwYI@ep-aged-breeze-a21juwel.eu-central-1.aws.neon.tech/project-4?sslmode=require"
