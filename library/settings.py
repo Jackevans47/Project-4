@@ -22,7 +22,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == "True"
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+]
 # "localhost",
 # "127.0.0.1",
 # "https://project-4-sue1.onrender.com",
@@ -156,7 +159,7 @@ LOGOUT_REDIRECT_URL = "home"
 
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # STATICFILES_DIRS = [BASE_DIR / "static"]
-if DEBUG:
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# if DEBUG:
+#     STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+# else:
+#     STATIC_ROOT = os.path.join(BASE_DIR, "static")
